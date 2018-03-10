@@ -1,5 +1,7 @@
 package com.controller;
 
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,16 +23,18 @@ public class VehicleController {
 		view.addObject("HeaderName", "Welcome to Products Page");
 		return view;
 	}
-	@RequestMapping(value="/success", method=RequestMethod.GET)
+	@RequestMapping(value="/view", method=RequestMethod.GET)
 	public ModelAndView success(@ModelAttribute("product1")Vehicle product) {
 		
-		ModelAndView view = new ModelAndView("success");
+		ModelAndView view = new ModelAndView("view");
 		view.addObject("HeaderName", "Welcome to Vehicle Details Page");
 		view.addObject("VechileId",product.getvID());
 		view.addObject("VechileSpeed",product.getvSpeed());
 		view.addObject("VechileLt",product.getvLt());
 		view.addObject("VechileLg",product.getvLg());
+		
 		return view;
+		
 	}
 	@RequestMapping(value="/success", method=RequestMethod.POST)
 	public ModelAndView productSuccess(@ModelAttribute("product1")Vehicle product)

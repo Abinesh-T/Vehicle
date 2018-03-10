@@ -2,6 +2,8 @@ package com.model;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import java.util.List;
+import org.hibernate.query.Query;
 
 public class VehicleDAO {
 	private Transaction trans;
@@ -24,5 +26,12 @@ public class VehicleDAO {
 		}
 		return b;
 	}
-	
+	public List<Vehicle> getProducts()
+	{
+		Query<Vehicle> query = sess.createQuery("from Vehicle");
+		List<Vehicle> lp = (List<Vehicle>)query.getResultList();
+		
+		return lp;
+		
+	}
 }
