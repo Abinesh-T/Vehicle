@@ -13,16 +13,16 @@ public class Vehicle {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private String Sno;
 	private String vID;
-	private String vSpeed;
+	/*private String vSpeed;
 	private String vLt;
-	private String vLg;
+	private String vLg;*/
 	public String getvID() {
 		return vID;
 	}
 	public void setvID(String vID) {
 		this.vID = vID;
 	}
-	public String getvSpeed() {
+/*	public String getvSpeed() {
 		return vSpeed;
 	}
 	public void setvSpeed(String vSpeed) {
@@ -40,7 +40,7 @@ public class Vehicle {
 	public void setvLg(String vLg) {
 		this.vLg = vLg;
 	}
-	
+	*/
 	
 	
 }

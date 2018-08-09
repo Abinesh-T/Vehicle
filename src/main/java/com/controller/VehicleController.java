@@ -11,6 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.model.Vehicle;
 import com.model.VehicleDAO;
+import com.niit.Ecommerce_backend.Model.CategoryModel;
 
 @Controller
 public class VehicleController {
@@ -28,11 +29,13 @@ public class VehicleController {
 		
 		ModelAndView view = new ModelAndView("view");
 		view.addObject("HeaderName", "Welcome to Vehicle Details Page");
-		view.addObject("VechileId",product.getvID());
-		view.addObject("VechileSpeed",product.getvSpeed());
+		List<Vehicle> c=VehicleDAO.getProducts();
+		view.addObject("list",c);
+		
+		/*view.addObject("VechileSpeed",product.getvSpeed());
 		view.addObject("VechileLt",product.getvLt());
 		view.addObject("VechileLg",product.getvLg());
-		
+		*/
 		return view;
 		
 	}
@@ -41,10 +44,10 @@ public class VehicleController {
 	{
 		ModelAndView mv = new ModelAndView("success");
 		mv.addObject("VechileId",product.getvID());
-		mv.addObject("VechileSpeed",product.getvSpeed());
+	/*	mv.addObject("VechileSpeed",product.getvSpeed());
 		mv.addObject("VechileLt",product.getvLt());
 		mv.addObject("VechileLg",product.getvLg());
-		
+		*/
 		VehicleDAO pd = new VehicleDAO();
 		pd.insertProduct(product);
 		

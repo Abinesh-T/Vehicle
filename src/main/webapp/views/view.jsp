@@ -10,13 +10,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%VehicleDAO vd=new VehicleDAO(); 
-List<Vehicle> vl =vd.getProducts();
-for (Vehicle element : vl)
-{
-	element.getvID();
-}
-%>
-<% %>
+<h1>{c.vID}</h1>
 </body>
 </html>

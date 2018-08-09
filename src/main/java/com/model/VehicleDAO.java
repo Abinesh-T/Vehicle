@@ -7,7 +7,7 @@ import org.hibernate.query.Query;
 
 public class VehicleDAO {
 	private Transaction trans;
-	private Session sess;
+	private static Session sess;
 	private boolean b = true;
 	
 	public boolean insertProduct(Vehicle p) {
@@ -26,7 +26,7 @@ public class VehicleDAO {
 		}
 		return b;
 	}
-	public List<Vehicle> getProducts()
+	public static List<Vehicle> getProducts()
 	{
 		Query<Vehicle> query = sess.createQuery("from Vehicle");
 		List<Vehicle> lp = (List<Vehicle>)query.getResultList();
